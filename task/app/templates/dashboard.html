@@ -1,0 +1,23 @@
+<center>
+<h1>Dashboard</h1>
+<table border=3>
+    <tr>
+      <th>Product</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="2">Action</th>
+    </tr>
+    <tr>
+      {% for i in product %}
+      <td>{{i.name}}</td>
+      <td>{{i.description}}</td>
+      <td>{{i.price}}</td>
+      <td><a href="{% url 'update' %}?pro_id={{i.id}}">update</td>
+      <td><a href="{% url 'delete' %}?pro_id={{i.id}}">delete</td>
+      
+    </tr>
+    {% endfor %}
+    <a href="{% url 'add_product' %}"><h1>Add product</h1>
+      <a href="{% url 'logout' %}"><h1>Logout</h1>
+
+  </table></center>
